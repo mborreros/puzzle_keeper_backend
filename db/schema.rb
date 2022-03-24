@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_24_190502) do
+ActiveRecord::Schema.define(version: 2022_03_24_191027) do
 
   create_table "puzzles", force: :cascade do |t|
     t.string "title"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2022_03_24_190502) do
     t.boolean "recommend"
     t.string "recommend_desc"
     t.datetime "created_at"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

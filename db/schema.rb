@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_24_184544) do
+ActiveRecord::Schema.define(version: 2022_03_24_185232) do
 
   create_table "puzzles", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,24 @@ ActiveRecord::Schema.define(version: 2022_03_24_184544) do
     t.string "image"
     t.boolean "owned"
     t.datetime "added_to_collection"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "puzzle_id"
+    t.string "purchase_reason"
+    t.string "purchase_location"
+    t.boolean "poster"
+    t.integer "piece_quality"
+    t.string "piece_quality_desc"
+    t.integer "fit_quality"
+    t.string "fit_quality_desc"
+    t.integer "finished_quality"
+    t.string "finished_quality_desc"
+    t.integer "difficulty"
+    t.string "difficulty_desc"
+    t.boolean "recommend"
+    t.string "recommend_desc"
+    t.datetime "created_at"
   end
 
 end

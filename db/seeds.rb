@@ -1,9 +1,12 @@
+require "pry"
+
 puts "👤 Seeding user data... 🌱"
-6.times do |index|
+5.times do |index|
   User.create(
     name: Faker::Name.first_name,
     bio: Faker::Lorem.sentence(word_count: 7),
-    join_date: Faker::Date.between(from: 30.days.ago, to: Date.today)
+    join_date: Faker::Date.between(from: 30.days.ago, to: Date.today),
+    review_count: 4
   )
 end
 puts "✨ User data seeded ✨"
@@ -25,12 +28,14 @@ puts "✨ Puzzle data seeded ✨"
 
 puts "📝 Seeding review data... 🌱"
 20.times do |index|
+  # ceiling of index /5 -1
+  current_id = User.all[index/4.ceil()].id
   locations = ["Target", "Amazon", "Barnes & Noble", "Gift, not purchased", "Buffalo Games Website"]
   yes_or_no = [true, false]
   Review.create(
     # grabs a random id from those in the Puzzles and Users tables
     puzzle_id: Puzzle.ids.sample,
-    user_id: User.ids.sample,
+    user_id: current_id,
     purchase_reason: Faker::Hipster.sentences(number: rand(1..3)).join,
     purchase_location: locations.sample,
     poster: yes_or_no.sample,

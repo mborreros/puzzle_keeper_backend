@@ -9,6 +9,7 @@ class CreatePuzzles < ActiveRecord::Migration[6.1]
       t.integer :price
       t.string :image
       t.boolean :owned
+      # check functionality of timestamps
       t.timestamp :added_to_collection
     end
   end

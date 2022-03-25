@@ -15,6 +15,7 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.string :difficulty_desc
       t.boolean :recommend
       t.string :recommend_desc
+      # check functionality of timestamps
       t.timestamp :created_at
     end
   end

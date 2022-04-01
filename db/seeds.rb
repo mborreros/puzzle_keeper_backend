@@ -13,13 +13,15 @@ puts "✨ User data seeded ✨"
 puts "🧩 Seeding puzzle data... 🌱"
 25.times do |index|
   manufacturers = ["Ravensburger", "MB", "Eurographics", "Buffalo Games", "Bits and Pieces", "Galison"]
+  yes_or_no = [true, false]
   Puzzle.create(
     # need to think of better way to get more believable titles
     title: Faker::Verb.simple_present.capitalize,
     pieces: 1000,
     manufacturer: manufacturers.sample,
     price: Faker::Number.decimal(l_digits: 2),
-    owned: true,
+    image: Faker::LoremFlickr.image,
+    owned: yes_or_no.sample,
     added_to_collection: Faker::Date.between(from: 60.days.ago, to: Date.today)
   )
 end

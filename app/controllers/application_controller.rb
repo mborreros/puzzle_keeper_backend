@@ -7,4 +7,14 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
+  post "/users" do
+    user = User.create(
+      name: params[:name],
+      bio: params[:bio],
+      review_count: 0,
+      join_date: timestamp
+    )
+    user.to_json
+  end
+
 end

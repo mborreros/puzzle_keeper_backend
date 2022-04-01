@@ -5,7 +5,6 @@ puts "👤 Seeding user data... 🌱"
   User.create(
     name: Faker::Name.first_name,
     bio: Faker::Lorem.sentence(word_count: 7),
-    join_date: Faker::Date.between(from: 30.days.ago, to: Date.today),
     review_count: 4
   )
 end

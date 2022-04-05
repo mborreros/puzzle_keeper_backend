@@ -19,6 +19,7 @@ puts "🧩 Seeding puzzle data... 🌱"
     title: Faker::Verb.simple_present.capitalize,
     pieces: 1000,
     manufacturer: manufacturers.sample,
+    purchase_link: Faker::Internet.url,
     price: Faker::Number.decimal(l_digits: 2),
     image: Faker::LoremFlickr.image,
     owned: yes_or_no.sample,

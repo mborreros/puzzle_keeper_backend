@@ -23,7 +23,6 @@ puts "🧩 Seeding puzzle data... 🌱"
     price: Faker::Number.decimal(l_digits: 2),
     image: Faker::LoremFlickr.image,
     owned: yes_or_no.sample,
-    added_to_collection: Faker::Date.between(from: 60.days.ago, to: Date.today)
   )
 end
 puts "✨ Puzzle data seeded ✨"

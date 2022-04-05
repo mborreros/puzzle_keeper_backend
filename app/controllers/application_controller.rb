@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # get all users
+  # user server calls
   get "/users" do
     users = User.all
     users.to_json
@@ -16,19 +16,18 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  # wishlist server calls
   get "/wishlist" do
-    wishlist = Puzzle.where("owned=0")
+    wishlist = Puzzle.where("owned=0").order("created_at DESC")
     wishlist.to_json
   end
 
-  #remove
   delete "/wishlist/:id" do 
     entry = Puzzle.find(params[:id])
     entry.destroy
     entry.to_json
   end
 
-  #patch
   patch "/wishlist/:id" do 
     entry = Puzzle.find(params[:id])
     entry.update(

@@ -51,7 +51,6 @@ puts "📝 Seeding review data... 🌱"
     difficulty_desc: Faker::Hipster.sentences(number: rand(1..5)).join,
     recommend: yes_or_no.sample,
     recommend_desc: Faker::Hipster.sentences(number: rand(1..3)).join,
-    created_at: Faker::Date.between(from: 27.days.ago, to: Date.today)
   )
 end
 puts "✨ Review data seeded ✨"

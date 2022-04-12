@@ -12,4 +12,6 @@ end
 use Rack::JSONBodyParser
 
 # Our application
+# after seperating controllers 
+# add line "use ControllerName" before run ApplicationController
 run ApplicationController

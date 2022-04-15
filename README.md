@@ -1,118 +1,43 @@
-# Phase 3 Project Guidelines
+# Puzzle Keeper
 
-## Learning Goals
+This is a web app that allows puzzle hobbyists to keep track of their puzzling household memebers, their collective wishlist and collection, and reviews on their owned puzzles. 
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+## Description
 
-## Introduction
-
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
-
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
-
-## Requirements
-
-For this project, you must:
-
-- Use Active Record to interact with a database.
-- Have a minimum of two models with a one-to-many relationship.
-- Create API routes in Sinatra that handles at least three different CRUD
-  actions for at least one of your Active Record models.
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary.
-
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
-
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
-
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+This web app is made by a hobbyist for fellow hobbyists. The main intention was to make the review writing and formating process experience easier for puzzlers. As a result, it allows the users to copy their individual reviews to their clipboard in markdown format to easily paste onto Reddit to post. 
 
 ## Getting Started
 
-### Backend Setup
+### Dependencies
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
+This app requires the download of the companion [frontend web app](https://github.com/mborreros/puzzle_keeper_frontend). Clone this and the backend repository to use complete functionality. 
+All other frontend libraries and packages are available within this frontend repository (install described below).
+App is best view in Google Chrome browser. 
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
+### Installing and Executing
 
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
+Upon cloning this repository, open the file within your computer's terminal. Once you have navigated to the respective folder/file, run `npm install` to download all necessart packages and dependencies. 
+Note, this project utlizes React, React DOM Router, Bootstrap 5, Material Design Bootstrap, Moment date/time formatter, and an assortment of FontAwesom icons. There should all be availble upon install. 
 
-You can start your server with:
+For the [frontend web app](https://github.com/mborreros/puzzle_keeper_frontend), there is minimal install necessary. 
+Once you clone the repository, run `bundle install` in the terminal to download the Ruby gems. This project utilizes SQLite, Active Record, Faker, and other gems. 
+There are some rake commands coded into this project for ease of set up. Run `bundle exec rake db:seed` to load some base data into the web app. Run `bundle exec rake db:seed:replant` to delete the previous seed data and overwrite it. 
+Run `rake server` to get the server up and running and communicating with the front end. 
 
-```console
-$ bundle exec rake server
-```
+## Need Help?
 
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
+Contact the project creator if you need any support!
 
-### Frontend Setup
+### Author/Creator
 
-Your backend and your frontend should be in **two different repositories**.
+Maya Borrero 
 
-Create a new repository in a **separate folder** with a React app for your
-frontend. `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
+Email: mayaborrero@outlook.com
 
-```console
-$ npx create-react-app my-app-frontend
-```
 
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
+## Version Histroy
 
-### Fetch Example
+V2 | Main branch, complete/compiled web app
 
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
+V1 | Dev branch used for building web app
 
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
-
-## Project Tips
-
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
-
-## Resources
-
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
-
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/

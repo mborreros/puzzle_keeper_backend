@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
       recommend_desc: params[:recommend_desc],
       user_id: params[:user_id]
     )
-    review.to_json
+    review.to_json(include: [:user])
   end
 
 end

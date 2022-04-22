@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
 
   get "/reviews/:id" do
     puzzleReviews = Puzzle.find(params[:id]).reviews.order("created_at DESC")
-    # pulls complete user profile associated with the review's user_id, rather than just the id number
-    puzzleReviews.to_json(include: [:user])
+    # pulls complete user name and puzzle associated with the review's user_id, rather than just the id number
+    puzzleReviews.to_json(:include => [:puzzle, :user => {:only => :name }])
   end
 
   post "/reviews" do

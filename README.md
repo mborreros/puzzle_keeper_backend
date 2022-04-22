@@ -6,6 +6,9 @@ This is a web app that allows puzzle hobbyists to keep track of their puzzling h
 
 This web app is made by a hobbyist for fellow hobbyists. The main intention was to make the review writing and formating process experience easier for puzzlers. As a result, it allows the users to copy their individual reviews to their clipboard in markdown format to easily paste onto Reddit to post. 
 
+## Data Structure
+<img src="app/images/default_puzzle.jpg"/>
+
 ## Getting Started
 
 ### Dependencies
